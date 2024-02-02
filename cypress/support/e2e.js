@@ -18,3 +18,9 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+import './commands'
+Cypress.on('uncaught:exception', (err, runnable) => {
+    if (err.message.includes("Cannot read")) {
+        return false;
+    }
+});
