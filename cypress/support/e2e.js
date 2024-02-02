@@ -24,3 +24,9 @@ Cypress.on('uncaught:exception', (err, runnable) => {
         return false;
     }
 });
+Cypress.on('uncaught:exception', (err, runnable) => {
+    if (err.message.includes("ci360 is not defined")) {
+        return false;
+    }
+});
+
